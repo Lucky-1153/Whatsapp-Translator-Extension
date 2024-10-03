@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Translator",
+    "version": "1.0",
+    "description": "Automatically translate WhatsApp chats using a translation API.",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "scripting"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/pop.png",
+        "48": "icons/pop1.png",
+        "128": "icons/pop2.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://web.whatsapp.com/*"],
+        "js": ["content.js"],
+        "css": ["style.css"]
+      }
+    ]
+  }
+  
